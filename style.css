@@ -1,3 +1,6 @@
+*{
+  outline: none;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,9 +16,10 @@
   stroke: #dcdde1;
 }
 .municipio:hover path{
-  fill: #40739e !important;
+  fill: #40739e;
 }
 tooltip {
+  pointer-events: none;
   position: fixed;
   width: 120px;
   background-color: #555;
@@ -23,6 +27,7 @@ tooltip {
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 tooltip::after {
   content: "";

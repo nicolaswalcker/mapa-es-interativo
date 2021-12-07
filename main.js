@@ -12,14 +12,18 @@ for (let i = 0; i < cities.length; i++) {
       base.innerHTML = "";
       base.appendChild(tip);
       if (document.getElementsByTagName("tooltip")[0]) {
-        // Checking for any "tooltip" element
-        document.getElementsByTagName("tooltip")[0].remove(); // Removing old tooltip
+        document.getElementsByTagName("tooltip")[0].remove();
       }
       base.style.top = (e.clientY - 10) + "px";
       base.style.left = (e.clientX + 15) + "px";
       document.body.appendChild(base);
     }
-    fullMap.addEventListener("mouseout", ()=>{
+    fullMap.addEventListener("mouseover", ()=>{
+      if (document.getElementsByTagName("tooltip").length > 0) {
+        document.getElementsByTagName("tooltip")[0].remove();
+      }
+    });
+    city.addEventListener("mouseover", ()=>{
       if (document.getElementsByTagName("tooltip").length > 0) {
         document.getElementsByTagName("tooltip")[0].remove();
       }
